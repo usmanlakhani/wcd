@@ -1,8 +1,15 @@
 import streamlit as st 
 
-st.title("Simple Calculator")
+st.title("Personal Profile Manager")
 
-num1 = st.number_input('Enter 1st number', value=0.0)
-num2 = st.number_input('Enter 2nd number', value=0.0)
+name = st.text_input("Enter your name")
+age = st.number_input("Enter your age", 0, 120, 25)
+bio = st.text_area("Write a short bio")
 
-operation = st.selectbox("Choose what you want to do with the 2 numbers entered",["+","-","*","/"])
+if st.button("Show My Profile"):
+    st.markdown(f""" # Profile Information
+    **Name:** {name},
+    **Age:** {age},   
+    **Bio:**
+    {bio}
+    """)
